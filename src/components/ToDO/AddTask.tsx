@@ -12,7 +12,11 @@ export const AddTask = () => {
             return;
         }
 
-        ToDoService.getInstance().createTask(task);
+        const successFunc = () => {
+            setTask('');
+        }
+
+        ToDoService.getInstance().createTask(task, successFunc);
     }
 
     return <div className='margin-top-10'>

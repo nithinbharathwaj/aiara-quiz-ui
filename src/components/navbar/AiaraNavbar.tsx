@@ -14,6 +14,9 @@ export const AiaraNavbar: FC = () => {
                     <NavItem>
                         <NavLink href="/">To Do</NavLink>
                     </NavItem>
+                    <NavItem>
+                        <NavLink href="/weather">Weather</NavLink>
+                    </NavItem>
                 </Nav>
             </Collapse>
         </Navbar>

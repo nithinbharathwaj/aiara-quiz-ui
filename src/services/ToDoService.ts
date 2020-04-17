@@ -44,7 +44,8 @@ export class ToDoService {
         }
     }
 
-    public createTask = async (text: string) => {
+    public createTask = async (text: string, successFunc = () => {
+    }) => {
         const url = 'http://localhost:8000/to-do';
         const headers = {
             Accept: "application/json", "Content-Type": "application/json"
@@ -54,8 +55,13 @@ export class ToDoService {
         }
 
         try {
-            const result = await new ApiService().post<ToDoImpl>(url, dataToSubmit, headers);
+            await new ApiService().post<ToDoImpl>(url, dataToSubmit, headers);
             this.getTasksFromAPI(true);
+            try {
+                successFunc();
+            } catch (e) {
+                console.error(e);
+            }
             alert('Task created');
         } catch (e) {
             console.error(e);
