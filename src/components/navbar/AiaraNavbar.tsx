@@ -13,10 +13,10 @@ export const AiaraNavbar: FC = () => {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="mr-auto" navbar>
                     <NavItem>
-                        <Link to={'/'}><NavLink>To Do</NavLink></Link>
+                        <NavLink tag={Link} to='/'>To Do</NavLink>
                     </NavItem>
                     <NavItem>
-                        <Link to="/weather"><NavLink>Weather</NavLink></Link>
+                        <NavLink tag={Link} to={'/weather'}>Weather</NavLink>
                     </NavItem>
                 </Nav>
             </Collapse>
