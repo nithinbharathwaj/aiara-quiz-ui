@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {AiaraNavbar} from "./components/navbar/AiaraNavbar";
+import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
+import {ToDo} from "./components/ToDO/ToDo";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (<div className="App">
+            <AiaraNavbar/>
+            <Switch>
+                <Route path="/" exact={true}>
+                    <ToDo/>
+                </Route>
+            </Switch>
+        </div>);
 }
 
 export default App;
