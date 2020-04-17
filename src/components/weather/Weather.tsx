@@ -25,7 +25,7 @@ export const Weather: FC = () => {
                 <tbody>
                 <tr>
                     <th scope="row">Wind</th>
-                    <td>{weatherData.wind.speed}</td>
+                    <td>{weatherData.wind.speed} m/s</td>
                 </tr>
                 <tr>
                     <th scope="row">Cloudiness</th>
@@ -33,23 +33,23 @@ export const Weather: FC = () => {
                 </tr>
                 <tr>
                     <th scope="row">Pressure</th>
-                    <td>{weatherData.main.pressure}</td>
+                    <td>{weatherData.main.pressure} hpa</td>
                 </tr>
                 <tr>
                     <th scope="row">Min Temperature</th>
-                    <td>{weatherData.main.temp_min}</td>
+                    <td>{(weatherData.main.temp_min - kelvinConst).toFixed(2)} C</td>
                 </tr>
                 <tr>
                     <th scope="row">Max Temperature</th>
-                    <td>{weatherData.main.temp_max}</td>
+                    <td>{(weatherData.main.temp_max - kelvinConst).toFixed(2)} C</td>
                 </tr>
                 <tr>
                     <th scope="row">Feels Like</th>
-                    <td>{weatherData.main.feels_like - kelvinConst}</td>
+                    <td>{(weatherData.main.feels_like - kelvinConst).toFixed(2)}</td>
                 </tr>
                 <tr>
                     <th scope="row">Geo Co-Ordinates</th>
-                    <td>{`[ ${weatherData.coord.lat}, ${weatherData.coord.lon} ]`}</td>
+                    <td>{`[ ${weatherData.coord.lat} , ${weatherData.coord.lon} ]`}</td>
                 </tr>
                 </tbody>
             </Table>

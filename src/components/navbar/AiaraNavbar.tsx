@@ -1,5 +1,6 @@
 import React, {FC, useState} from "react";
 import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from 'reactstrap';
+import {Link} from "react-router-dom";
 
 export const AiaraNavbar: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,10 +13,10 @@ export const AiaraNavbar: FC = () => {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="mr-auto" navbar>
                     <NavItem>
-                        <NavLink href="/">To Do</NavLink>
+                        <Link to={'/'}><NavLink>To Do</NavLink></Link>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/weather">Weather</NavLink>
+                        <Link to="/weather"><NavLink>Weather</NavLink></Link>
                     </NavItem>
                 </Nav>
             </Collapse>
